@@ -1,0 +1,11 @@
+.wrapper {
+  /* width: 100%; */
+  height: var(--primary-height-header);
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+  align-items: center;
+}
+.content {
+  width: var(--primary-width);
+}
