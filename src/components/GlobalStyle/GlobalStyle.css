@@ -1,26 +1,36 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-:root{
-    --primary: : rgb(254, 44, 85);
+:root {
+    --primary: rgb(254, 44, 85);
     --primary-height-header: 60px;
-    --primary-width: 1150px;
+    --primary-width: 90vw;
     --primary-width-sidebar: 223px;
+    --while: #fff;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: 'Mulish', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  text-rendering: optimizeSpeed;   /* tối ưu tải font và duyệt font chữ */
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed; /* tối ưu tải font và duyệt font chữ */
+}
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+a {
+    text-decoration: none;
 }

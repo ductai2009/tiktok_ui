@@ -1,0 +1,16 @@
+.menu-item {
+    min-width: 224px;
+}
+.menu-item .item-menu {
+    justify-content: start;
+    padding: 10px 25px;
+    width: 100%;
+    padding: 11px 16px;
+}
+.menu-item .item-menu:hover {
+    text-decoration: none;
+    background-color: rgba(22, 24, 35, 0.03);
+}
+.menu-item .item-menu + .item-menu {
+    margin-left: 0;
+}
