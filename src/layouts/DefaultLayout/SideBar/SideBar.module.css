@@ -156,6 +156,61 @@
     cursor: pointer;
     text-decoration: none;
 }
+.DivFooterContainer {
+    padding: 16px 0 0 8px;
+}
+.container .item {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 0px;
+    cursor: pointer;
+    color: rgba(22, 24, 35, 0.5);
+    font-family: var(--font-family);
+    font-weight: 700;
+    padding: 2px 0;
+}
+.container .item.copyRight {
+    color: rgba(22, 24, 35, 0.5);
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+}
+.DivFooterContainer .item.active .header {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: rgb(22, 24, 35);
+    font-family: TikTokDisplayFont;
+    font-weight: 700;
+}
+
+.DivFooterContainer .header__box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(22, 24, 35, 0.5);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 16px;
+    margin-right: 6px;
+    margin-top: 5px;
+}
+.DivFooterContainer .header__box {
+    display: none;
+}
+.DivFooterContainer .item.active .header__box {
+    display: flex;
+}
+.header__box .header__item:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 1024px) {
     .wrapper {
         width: var(--primary-width-sidebar-mobile);

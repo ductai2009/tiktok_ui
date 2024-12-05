@@ -11,14 +11,14 @@ import Button from '~/components/Button';
 
 const cx = classNames.bind(style);
 
-function Wrapper({ header, data = [], className, onClick, seeMore = true }) {
-    if (!seeMore) {
+function Wrapper({ header, data = [], className, onClick, seeMore = false }) {
+    if (!seeMore && seeMore !== null) {
         data = [...data, data];
     }
     // console.log('data: ', data);
     return (
         <div className={cx('layout-wrapper')}>
-            <header className={cx('layout-wrapper__header')}>{header}</header>
+            {header && <header className={cx('layout-wrapper__header')}>{header}</header>}
             {data.map((result, ind) => {
                 return (
                     <Link key={ind} to={`/@${result.nickname}`} state={{ ...result }}>

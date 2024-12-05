@@ -27,6 +27,9 @@ const cx = classNames.bind(style);
 function SideBar() {
     const [accountResult, setAccountResult] = useState([]);
     const [seeMore, setSeeMore] = useState(true);
+    const [isCompany, setIsCompany] = useState(false);
+    const [isProgram, setIsProgram] = useState(false);
+    const [isTeamsAndPolicies, setIsTeamsAndPolicies] = useState(false);
 
     const fetchApi = async (query) => {
         const result = await search(query);
@@ -39,6 +42,11 @@ function SideBar() {
     useEffect(() => {
         fetchApi('a');
     }, []);
+    const handleClickFooter = (type) => {
+        setIsCompany(type === 'company');
+        setIsProgram(type === 'program');
+        setIsTeamsAndPolicies(type === 'teamsAndPolicies');
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -60,7 +68,66 @@ function SideBar() {
             </div>
             <div className={cx('container', 'lane-dash', 'user')}>
                 <Wrapper header="Following accounts" data={accountResult} onClick={handleSeeMore} seeMore={seeMore} />
-                {/* <Wrapper header="Following accounts" data={accountResult} onClick={handleSeeMore} /> */}
+            </div>
+            <div className={cx('container', 'lane-dash', 'DivFooterContainer')}>
+                <div className={cx('item', { active: isCompany })}>
+                    <div onClick={() => handleClickFooter('company')} className={cx('header')}>
+                        Company
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>About</div>
+                        <div className={cx('header__item')}>Newsroom</div>
+                        <div className={cx('header__item')}>Contact</div>
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>Careers</div>
+                    </div>
+                </div>
+                <div className={cx('item', { active: isProgram })}>
+                    <div onClick={() => handleClickFooter('program')} className={cx('header')}>
+                        Program
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>TikTok for Good</div>
+                        <div className={cx('header__item')}>Advertise</div>
+                    </div>
+
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>TikTok LIVE Creator Networks</div>
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>Transparency</div>
+                        <div className={cx('header__item')}>Developers</div>
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>TikTok Rewards</div>
+                        <div className={cx('header__item')}>TikTok Embeds</div>
+                    </div>
+                </div>
+                <div className={cx('item', { active: isTeamsAndPolicies })}>
+                    <div className={cx('header')} onClick={() => handleClickFooter('teamsAndPolicies')}>
+                        Terms & Policies
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>Help</div>
+                        <div className={cx('header__item')}>Safety</div>
+                        <div className={cx('header__item')}>Terms</div>
+                        <div className={cx('header__item')}>Privacy Policy</div>
+                    </div>
+
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>Accessibility</div>
+                        <div className={cx('header__item')}>Privacy Center</div>
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>Creator Academy</div>
+                    </div>
+                    <div className={cx('header__box')}>
+                        <div className={cx('header__item')}>Community Guidelines</div>
+                    </div>
+                </div>
+
+                <div className={cx('item', 'copyRight')}>© 2024 TikTok</div>
             </div>
         </div>
     );

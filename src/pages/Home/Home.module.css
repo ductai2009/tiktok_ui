@@ -354,8 +354,6 @@
 .sound-video {
     border-radius: 99px;
     padding: 12px 8px;
-
-    /* height: 24px; */
     display: block;
     position: relative;
     cursor: initial;
@@ -378,6 +376,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.sound-video input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--while);
+    border-radius: 50%;
+    cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
     .wrapper {
