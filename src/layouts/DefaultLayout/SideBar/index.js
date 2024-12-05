@@ -21,6 +21,7 @@ import ItemMenu from './ItemMenu';
 import Wrapper from './Wrapper';
 import images from '~/assets/image';
 import search from '~/services/searchService';
+import config from '~/components/config';
 
 const cx = classNames.bind(style);
 
@@ -51,20 +52,42 @@ function SideBar() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
-                <ItemMenu title="For You" icon={HomeIcon} iconActive={HomeActiveIcon} to="/" />
-                <ItemMenu title="Explore" icon={CompassIcon} iconActive={CompassActiveIcon} to="/explore" tag="New" />
+                <ItemMenu title="For You" icon={HomeIcon} iconActive={HomeActiveIcon} to={config.routes.Home} />
+                <ItemMenu
+                    title="Explore"
+                    icon={CompassIcon}
+                    iconActive={CompassActiveIcon}
+                    to={config.routes.Explore}
+                    tag="New"
+                />
                 <ItemMenu
                     title="Following"
                     icon={UserLeftToRightIcon}
                     iconActive={UserLeftToRightIcon}
-                    to="/following"
+                    to={config.routes.Following}
                     circle={true}
                     className={'pl-5'}
                 />
-                <ItemMenu title="Friends" icon={UserGroupIcon} iconActive={UserGroupActiveIcon} to="/friends" />
-                <ItemMenu title="LIVE" icon={CameraLiveIcon} iconActive={CameraLiveActionIcon} to="/live" />
-                <ItemMenu title="Messages" icon={PlaneIcon} iconActive={PlaneIcon} to="/messages" className={'pl-3'} />
-                <ItemMenu title="Profile" avatar={true} to="/profile" />
+                <ItemMenu
+                    title="Friends"
+                    icon={UserGroupIcon}
+                    iconActive={UserGroupActiveIcon}
+                    to={config.routes.Friends}
+                />
+                <ItemMenu
+                    title="LIVE"
+                    icon={CameraLiveIcon}
+                    iconActive={CameraLiveActionIcon}
+                    to={config.routes.Live}
+                />
+                <ItemMenu
+                    title="Messages"
+                    icon={PlaneIcon}
+                    iconActive={PlaneIcon}
+                    to={config.routes.Messages}
+                    className={'pl-3'}
+                />
+                <ItemMenu title="Profile" avatar={true} to={config.routes.Profile} />
             </div>
             <div className={cx('container', 'lane-dash', 'user')}>
                 <Wrapper header="Following accounts" data={accountResult} onClick={handleSeeMore} seeMore={seeMore} />

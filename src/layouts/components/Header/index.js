@@ -137,7 +137,6 @@ function Header() {
                                             className={cx('current-user')}
                                             fallBack={images.accountNhuY}
                                             alt="Account"
-                                            src="https://scontent.fsgn8-3.fna.fbcdn.net/v/t39.30808-1/425472386_1810480049391415_3740702920830322662_n.jpg?stp=dst-jpg_s200x200&_nc_cat=104&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=0qo66Pe_HZwQ7kNvgEwxqlh&_nc_zt=24&_nc_ht=scontent.fsgn8-3.fna&_nc_gid=Ae0sX1qVZfGUv5Q3NDrSdH5&oh=00_AYCoYPM7pA0ry9zRA-nIOkM2n1nYNAvlGs-0OKvvpAmI7w&oe=673A1A10"
                                         ></Image>
                                     </div>
                                 </button>

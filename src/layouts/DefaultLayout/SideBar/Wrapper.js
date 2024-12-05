@@ -21,7 +21,7 @@ function Wrapper({ header, data = [], className, onClick, seeMore = false }) {
             {header && <header className={cx('layout-wrapper__header')}>{header}</header>}
             {data.map((result, ind) => {
                 return (
-                    <Link key={ind} to={`/@${result.nickname}`} state={{ ...result }}>
+                    <Link key={ind} to={`/tiktok_ui/@${result.nickname}`} state={{ ...result }}>
                         <Account src={result.avatar} nickName={result.nickname} fullName={result.full_name} />
                     </Link>
                 );
