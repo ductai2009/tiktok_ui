@@ -90,7 +90,12 @@ function SideBar() {
                 <ItemMenu title="Profile" avatar={true} to={config.routes.ProfileMe} />
             </div>
             <div className={cx('container', 'lane-dash', 'user')}>
-                <Wrapper header="Following accounts" data={accountResult} onClick={handleSeeMore} seeMore={seeMore} />
+                <Wrapper
+                    header="Following accounts"
+                    data={accountResult}
+                    // onClick={handleSeeMore}
+                    seeMore={seeMore}
+                />
             </div>
             <div className={cx('container', 'lane-dash', 'DivFooterContainer')}>
                 <div className={cx('item', { active: isCompany })}>

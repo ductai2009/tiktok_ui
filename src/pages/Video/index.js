@@ -40,6 +40,7 @@ import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import videos from '~/assets/videos';
 import Comment from '~/components/Comment';
+import config from '~/components/config';
 function Video({ srcVideo }) {
     const [isPlayVideo, setIsPlayVideo] = useState(false);
     const videoRef = useRef([]);
@@ -53,7 +54,18 @@ function Video({ srcVideo }) {
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(0.7);
     const [currentVolume, setCurrentVolume] = useState(volume);
-
+    let dataUser = location.state;
+    if (!dataUser) {
+        dataUser = {
+            avatar: images.accountNhuY,
+            nickname: 'ductai_09',
+            full_name: 'Đức Tài',
+            bio: 'bio',
+            followers_count: '12M',
+            followings_count: '32.4K',
+            likes_count: '32M',
+        };
+    }
     // Xử lý cập nhật thời gian hiện tại khi video phát
     const handleTimeUpdate = () => {
         if (videoRef.current) {
@@ -110,7 +122,6 @@ function Video({ srcVideo }) {
             setIndVideo((prev) => (prev < lengthSrcVideo - 1 ? prev + 1 : 0));
         } else if (type === 'down') {
             setIndVideo((prev) => (prev > 0 ? prev - 1 : lengthSrcVideo - 1));
-            console.log('down');
         }
 
         setSrcVideoPage(arrSrcVideos[indVideo]);
@@ -172,7 +183,7 @@ function Video({ srcVideo }) {
                             <CloseIcon className={cx('icon', 'icon-close')}></CloseIcon>
                         </div>
 
-                        <div className={cx('box-more-icon')} onClick={(e) => {}}>
+                        <div className={cx('box-more-icon', 'btn-hv')} onClick={(e) => {}}>
                             <MoreDotsIcon className={cx('icon')} />
                         </div>
                         <div
@@ -278,7 +289,11 @@ function Video({ srcVideo }) {
                         <div className={cx('header')}>
                             <div className={cx('info')}>
                                 <div className={cx('layout-left')}>
-                                    <Link className={cx('profile')} to={'/profile'}>
+                                    <Link
+                                        className={cx('profile')}
+                                        to={config.routes.urlProfile + '/@' + dataVideo.nickname || 'ductai.09'}
+                                        state={dataVideo}
+                                    >
                                         <Image src={dataVideo.avatar} className={cx('current-user')} />
                                     </Link>
                                     <div className={cx('user-info')}>
@@ -309,7 +324,7 @@ function Video({ srcVideo }) {
                             <div className={cx('location')}>
                                 <LocationIcon className={cx('icon')} />
                                 <p className={cx('title')}>ĐakLak</p>
-                                <LocationIcon className={cx('icon')} />
+                                {/* <LocationIcon className={cx('icon')} /> */}
                             </div>
                         </div>
                         <div className={cx('action')}>
@@ -386,6 +401,7 @@ function Video({ srcVideo }) {
                                     return (
                                         <Comment
                                             key={ind}
+                                            dataUser={result}
                                             srcUser={result.avatar || images.accountNhuY}
                                             num_rep="32"
                                             userName={result.nickname || 'ductai_09'}

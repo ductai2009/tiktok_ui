@@ -27,6 +27,7 @@ import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import config from '~/components/config';
 
 function Home() {
     const cx = classNames.bind(style);
@@ -225,6 +226,7 @@ function Home() {
             videoCurrent.play();
         }
     };
+    const [profile, setProfile] = useState();
 
     return (
         <div id="sliderWrapper" className={cx('wrapper')}>
@@ -308,7 +310,7 @@ function Home() {
                                     </div>
                                 )}
                                 <div className={cx('nickname-and-time')}>
-                                    <Link className={cx('useName', 'text-underline-hv')} to="/profile">
+                                    <Link className={cx('useName', 'text-underline-hv')} to={slide.nickname}>
                                         {slide.nickname}
                                     </Link>
                                     <span>-</span>
@@ -334,10 +336,10 @@ function Home() {
                     </div>
                     <div className={cx('action')}>
                         <div className={cx('box-relative', 'btn-action')}>
-                            <Link to="/profile">
+                            <Link to={config.routes.urlProfile + '/@ductai_09'}>
                                 <Image
                                     alt="img-user"
-                                    to="/profile"
+                                    to={config.routes.urlProfile + '/@ductai_09'}
                                     src={images.accountNhuY}
                                     className={cx('current-user')}
                                 />
@@ -352,7 +354,11 @@ function Home() {
                             <HeartIcon className={cx('icon')} />
                         </Button>
 
-                        <Button to={`/@${slide.nickname}/video/video`} srcVideo={slide.srcVideo} title="645.2K">
+                        <Button
+                            to={`${config.routes.urlProfile}/@${slide.nickname}/video/video`}
+                            srcVideo={slide.srcVideo}
+                            title="645.2K"
+                        >
                             <CommentIcon className={cx('icon')} />
                         </Button>
 

@@ -11,11 +11,17 @@ const cx = classNames.bind(style);
 function ItemMenu({ avatar, icon, iconActive, title, to, tag = '', circle = false, className }) {
     const Icon = icon;
     const IconActive = iconActive;
-
+    const handleClickMenu = (title) => {
+        document.title = title;
+    };
     return (
-        <NavLink to={to} className={(nav) => cx('btn', 'item-hv', { active: nav.isActive })}>
+        <NavLink
+            onClick={() => handleClickMenu(title)}
+            end
+            to={to}
+            className={(nav) => cx('btn', 'item-hv', { active: nav.isActive })}
+        >
             <div className={cx('icon', { [className]: className })}>
-                {}
                 {(avatar && <Image src={images.accountNhuY} className={cx('current-user', 'pd-4')} />) || (
                     <>
                         {' '}

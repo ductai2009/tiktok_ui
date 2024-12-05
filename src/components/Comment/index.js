@@ -1,23 +1,28 @@
 import style from './Comment.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import Image from '~/components/Image';
+
 // import images from '~/assets/image';
 import { DownIcon, HeartCmtIcon } from '../Icon';
+import config from '../config';
+import images from '~/assets/image';
 
-function Comment({ srcUser, num_rep, userName, cmt, time, num_like }) {
+function Comment({ srcUser, num_rep, userName, cmt, time, num_like, dataUser }) {
     const cx = classNames.bind(style);
+    const location = useLocation();
+
     return (
         <div className={cx('container')}>
             <div className={cx('wrapper')}>
                 <div className={cx('content')}>
                     <div className={cx('avatar')}>
-                        <Link className={cx('profile')} to={'/profile'}>
+                        <Link className={cx('profile')} to={config.routes.urlProfile + '/@' + userName}>
                             <Image src={srcUser} className={cx('avatar-user')} />
                         </Link>
                     </div>
                     <div className={cx('info-user')}>
-                        <Link to={'/profile'}>
+                        <Link state={dataUser} to={config.routes.urlProfile + '/@' + userName}>
                             <div className={cx('user-name', 'hv-underline')}>{userName}</div>
                         </Link>
                         <div className={cx('cmt')}>{cmt}</div>

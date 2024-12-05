@@ -48,7 +48,7 @@ function Header() {
     const currentUser = true;
     const MENU_NO_ACC = [
         {
-            title: 'Ngôn Ngữ',
+            title: 'Language',
             icon: <LanguageIcon />,
             to: '',
             children: {
@@ -60,12 +60,12 @@ function Header() {
             },
         },
         {
-            title: 'Phản hồi và trợ giúp',
+            title: 'Feedback and help',
             icon: <FeedBackIcon />,
-            to: '/fetchBack',
+            to: '',
         },
         {
-            title: 'Chế độ sáng',
+            title: 'Theme',
             icon: <ModeIcon />,
             to: '',
         },
@@ -74,7 +74,7 @@ function Header() {
         {
             title: 'View profile',
             icon: <AccountIcon />,
-            to: '/fetchBack',
+            to: config.routes.ProfileMe,
         },
         {
             title: 'Get Coins',
@@ -84,7 +84,7 @@ function Header() {
         {
             title: 'Creator tools',
             icon: <CreatorToolIcon />,
-            to: '/fetchBack',
+            to: '',
         },
         {
             title: 'Settings',

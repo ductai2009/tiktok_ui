@@ -7,11 +7,15 @@ function Image({ fallBack: srcFallBack, to, alt, src, ...props }) {
     const navigate = useNavigate();
     const [fallBack, setFallBack] = useState(src + `?t=${timestamp}`);
     useEffect(() => {
-        if (src) {
-            setFallBack(src + `?t=${timestamp}`);
-        }
-        if (!fallBack) {
-            setFallBack(images.noImage);
+        try {
+            if (src) {
+                setFallBack(src + `?t=${timestamp}`);
+            }
+            if (!fallBack) {
+                setFallBack(images.noImage);
+            }
+        } catch (error) {
+            console.log('error load img: ', error);
         }
     }, [src]);
 

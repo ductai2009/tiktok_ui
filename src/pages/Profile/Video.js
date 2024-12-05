@@ -3,14 +3,12 @@ import style from './Profile.module.css';
 import classNames from 'classnames/bind';
 import images from '~/assets/image';
 import { PlayProfileIcon } from '~/components/Icon';
+import config from '~/components/config';
 
 function Video({ src, dataUser }) {
     const cx = classNames.bind(style);
-    const handleClick = (e) => {
-        console.log('handleClick: ', e.target.currentSrc);
-        console.log('handleClick: ', e);
-    };
-    const infoVideo = `/@${dataUser.nickname || 'ductai_09'}/video/id`;
+    const handleClick = (e) => {};
+    const infoVideo = `${config.routes.urlProfile}/@${dataUser.nickname || 'ductai_09'}/video/id`;
     let dataVideo = {
         nickname: dataUser.nickname,
         avatar: dataUser.avatar,

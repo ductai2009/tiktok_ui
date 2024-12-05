@@ -11,5 +11,6 @@ const routes = {
     Search: '/tiktok_ui/search',
     Video: '/tiktok_ui/:username/video/:id',
     Photo: '/tiktok_ui/:username/photo',
+    urlProfile: '/tiktok_ui',
 };
 export default routes;
