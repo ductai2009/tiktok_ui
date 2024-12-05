@@ -1,0 +1,103 @@
+.wrapper {
+    /* width: 100%; */
+    --height-search: 46px;
+    --height-search-before: 28px;
+    --space-search-before: 9px;
+    height: var(--primary-height-header);
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background-color: var(--while);
+    align-items: center;
+    z-index: 10;
+}
+.content {
+    position: fixed;
+    background-color: var(--while);
+    /* width: var(--primary-width); */
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 24px;
+    height: var(--primary-height-header);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    /* gap: 8px; */
+    /* background-color: aliceblue; */
+}
+.more-icon {
+    font-size: 2rem;
+    /* padding: 7px; */
+    /* margin-left: 9px; */
+    background-color: transparent;
+    cursor: pointer;
+}
+.more-icon.account-icon {
+}
+
+.account-icon .box-current-user {
+    margin-bottom: -5px;
+}
+
+.more-icon.noAccount-icon {
+    padding: 7px;
+    margin-left: 8px;
+
+    /* background-color: black; */
+}
+.btn-upload {
+    margin-right: 24px;
+}
+.current-user {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.box-message .icon-message {
+    width: 20px;
+    height: 20px;
+}
+
+.box-message {
+    margin-right: 16px;
+    margin-right: 24px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    width: var(--primary-width);
+    width: 118px;
+    height: 42px;
+    object-fit: cover;
+}
+.logo-full {
+}
+.logo-ipad {
+    display: none;
+}
+@media screen and (max-width: 1024px) {
+    .content .logo img {
+    }
+    .logo-full {
+        display: none;
+    }
+    .logo-ipad {
+        display: flex;
+    }
+    .btn-upload .title {
+        display: none;
+    }
+    .logo {
+        min-width: 72px;
+        margin-left: -16px;
+    }
+}

@@ -1,5 +1,6 @@
+import Empty from '../Empty';
 function Following() {
-  return <h2>Following page</h2>;
+    return <Empty></Empty>;
 }
 
 export default Following;

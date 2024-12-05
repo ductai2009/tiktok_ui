@@ -9,7 +9,7 @@
     padding-top: 8px;
     box-sizing: border-box;
     max-height: min(-156px + 100vh, 734px);
-    overflow: hidden auto;
+    /* overflow: hidden auto; */
     list-style-type: none;
     padding-inline-start: 0px;
 }

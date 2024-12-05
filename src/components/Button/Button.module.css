@@ -2,25 +2,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 8px;
+    /* padding: 10px 8px; */
+
     font-weight: 700;
     font-size: 1.6rem;
     line-height: unset;
     border-radius: 4px;
     border: 1px solid transparent;
     cursor: pointer;
+    font-family: var(--font-family);
 }
 .wrapper + .wrapper {
-    margin-left: 14px;
+    /* margin-left: 14px; */
 }
 .icon {
     /* margin-right: 6px; */
     display: flex;
     width: 20px;
+    height: 16px;
+}
+.title,
+.icon {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 .icon + .title,
 .title + .icon {
-    margin-left: 8px;
+    /* margin-left: 8px; */
 }
 
 .primary {
@@ -31,8 +41,14 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
 }
 .outline {
-    color: var(--primary);
-    border-color: currentColor;
+    /* color: var(--primary); */
+    color: var(--text-color);
+    /* border-color: currentColor; */
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    background-color: transparent;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 6px 16px;
 }
 .outline:hover {
     background: rgba(254, 44, 85, 0.06);

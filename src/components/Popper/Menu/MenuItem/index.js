@@ -6,9 +6,16 @@ import style from '../Menu.module.css';
 import Button from '~/components/Button';
 
 const cx = className.bind(style);
-function MenuItem({ data }) {
+function MenuItem({ data, onClick, to, onChange }) {
     return (
-        <Button className={cx('item-menu')} text leftIcon={data.icon}>
+        <Button
+            to={to}
+            onChange={onChange}
+            onClick={onClick}
+            className={cx('item-menu', { separate: data.separate })}
+            text
+            leftIcon={data.icon}
+        >
             {data.title}
         </Button>
     );

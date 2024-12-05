@@ -12,13 +12,21 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "@tippyjs/react": "^4.2.6",
+        "axios": "^1.7.7",
         "classnames": "^2.5.1",
+        "hammerjs": "^2.0.8",
         "normalize.css": "^8.0.1",
+        "prop-types": "^15.8.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.26.2",
         "react-scripts": "5.0.1",
         "web-vitals": "^2.1.4"
+    },
+    "devDependencies": {
+        "babel-plugin-module-resolver": "^5.0.2",
+        "customize-cra": "^1.0.0",
+        "react-app-rewired": "^2.2.1"
     },
     "scripts": {
         "start": "react-app-rewired start",
@@ -43,10 +51,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "babel-plugin-module-resolver": "^5.0.2",
-        "customize-cra": "^1.0.0",
-        "react-app-rewired": "^2.2.1"
     }
 }

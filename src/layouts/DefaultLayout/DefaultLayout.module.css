@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    /* width: var(--primary-width); */
+    width: 100%;
+    /* background-color: #ccc; */
+    margin: 0 auto;
+    /* min-height: 1000px; */
+}
+.content {
+    flex: 1;
+    margin-left: var(--primary-width-sidebar);
+    /* margin-left: calc(var(--primary-width-sidebar) + 24px); */
+}
+@media screen and (max-width: 1024px) {
+    .content {
+        margin-left: var(--primary-width-sidebar-mobile);
+    }
+}

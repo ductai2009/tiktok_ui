@@ -1,7 +1,7 @@
 import className from 'classnames/bind';
 import style from './Button.module.css';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 let cx = className.bind(style);
 
 function Button({
@@ -17,6 +17,7 @@ function Button({
     leftIcon,
     rightIcon,
     className,
+    clsTitle,
     children,
     onClick,
     preProps,
@@ -51,13 +52,34 @@ function Button({
         text,
         disable,
     });
+    let classTitle = cx('title', {
+        [clsTitle]: clsTitle,
+    });
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
-            <span className={cx('title')}>{children}</span>
+            <span className={classTitle}>{children}</span>
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 }
+
+Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    rounded: PropTypes.bool,
+    text: PropTypes.bool,
+    disable: PropTypes.bool,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func,
+    preProps: PropTypes.string,
+};
 
 export default Button;
