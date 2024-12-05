@@ -44,9 +44,9 @@ function SideBar() {
         fetchApi('a');
     }, []);
     const handleClickFooter = (type) => {
-        setIsCompany(type === 'company');
-        setIsProgram(type === 'program');
-        setIsTeamsAndPolicies(type === 'teamsAndPolicies');
+        setIsCompany(type === 'company' && isCompany == false ? true : false);
+        setIsProgram(type === 'program' && isProgram == false ? true : false);
+        setIsTeamsAndPolicies(type === 'teamsAndPolicies' && isTeamsAndPolicies == false ? true : false);
     };
 
     return (
@@ -87,7 +87,7 @@ function SideBar() {
                     to={config.routes.Messages}
                     className={'pl-3'}
                 />
-                <ItemMenu title="Profile" avatar={true} to={config.routes.Profile} />
+                <ItemMenu title="Profile" avatar={true} to={config.routes.ProfileMe} />
             </div>
             <div className={cx('container', 'lane-dash', 'user')}>
                 <Wrapper header="Following accounts" data={accountResult} onClick={handleSeeMore} seeMore={seeMore} />
